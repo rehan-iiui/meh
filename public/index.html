@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Examly AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- REGISTRATION -->
+<section id="registration" class="register-screen">
+  <div class="register-card glass">
+    <div class="logo">E</div>
+    <div class="eyebrow">YOUR PERSONAL LEARNING SPACE</div>
+    <h1>Welcome to Examly.</h1>
+    <p>Prepare smarter. Understand better. Achieve more.</p>
+
+    <form id="registerForm">
+      <label>First name</label>
+      <input id="firstName" required placeholder="Your first name">
+
+      <label>Last name</label>
+      <input id="lastName" required placeholder="Your last name">
+
+      <label>Your class</label>
+      <select id="grade" required>
+        <option value="">Select your class</option>
+        <option value="1">Class 1</option>
+        <option value="2">Class 2</option>
+        <option value="3">Class 3</option>
+        <option value="4">Class 4</option>
+        <option value="5">Class 5</option>
+        <option value="6">Class 6</option>
+      </select>
+
+      <button class="main-button" type="submit">Enter Examly →</button>
+    </form>
+  </div>
+</section>
+
+<!-- APPLICATION -->
+<div id="application" class="application hidden">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar glass">
+    <div class="brand">
+      <div class="brand-icon">E</div>
+      <span>examly<span class="purple">.</span></span>
+    </div>
+
+    <div class="summary-heading">SUMMARY OF<br>THIS PERIOD</div>
+    <div id="summaryList" class="summary-list">
+      <div class="empty-summary">Your learning summaries will appear here.</div>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="student-avatar" id="avatar">S</div>
+      <div>
+        <strong id="studentName">Student</strong>
+        <small id="studentGrade">Class 1</small>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-area">
+    <header class="topbar glass">
+      <div>
+        <div class="top-title" id="teacherTitle">Maths Teacher</div>
+        <div class="online"><span></span> AI teacher ready</div>
+      </div>
+
+      <div class="subject-switch">
+        <button class="subject-button active" data-subject="Maths">∑ Maths</button>
+        <button class="subject-button" data-subject="English Grammar">Aa Grammar</button>
+      </div>
+    </header>
+
+    <section class="chat-panel glass">
+      <div id="chatMessages" class="chat-messages">
+        <div class="welcome-message">
+          <div class="welcome-icon">✦</div>
+          <h1>What shall we learn today?</h1>
+          <p>Ask your teacher anything about Maths or English Grammar.</p>
+          <div class="suggestions">
+            <button class="suggestion">Explain fractions</button>
+            <button class="suggestion">Teach me decimals</button>
+            <button class="suggestion">What are parts of speech?</button>
+            <button class="suggestion">Explain nouns and verbs</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="typing" class="typing hidden">
+        <span></span><span></span><span></span>
+        Teacher is thinking...
+      </div>
+
+      <form id="chatForm" class="chat-input-area">
+        <textarea id="messageInput"
+          placeholder="Ask your teacher anything..."
+          rows="1"></textarea>
+        <button type="submit" class="send-button" aria-label="Send">↑</button>
+      </form>
+
+      <div class="input-caption">Examly AI · Learning is a journey.</div>
+    </section>
+  </main>
+
+  <!-- RIGHT PANEL -->
+  <aside class="right-panel">
+
+    <div class="timer-card glass">
+      <div class="panel-label">YOUR STUDY PERIOD</div>
+      <div id="phaseName" class="phase-name">Learning session</div>
+      <div id="timer" class="timer">10:00</div>
+      <div class="timer-track"><div id="timerBar"></div></div>
+      <div id="timerCaption" class="timer-caption">Time to understand concepts</div>
+    </div>
+
+    <div class="break-card glass">
+      <div class="panel-label">UP NEXT</div>
+      <div class="break-icon">☕</div>
+      <h3 id="nextTitle">Lunch break</h3>
+      <div id="nextTime">10:00</div>
+      <p id="nextCaption">A little time to relax.</p>
+    </div>
+
+    <div class="phase-card glass">
+      <div class="panel-label">PERIOD TIMELINE</div>
+      <div class="timeline-item active" id="phase1">
+        <span class="timeline-dot"></span>
+        <div><strong>Learning</strong><small>10 minutes</small></div>
+      </div>
+      <div class="timeline-item" id="phase2">
+        <span class="timeline-dot"></span>
+        <div><strong>Lunch break</strong><small>2 minutes</small></div>
+      </div>
+      <div class="timeline-item" id="phase3">
+        <span class="timeline-dot"></span>
+        <div><strong>MCQ examination</strong><small>8 minutes</small></div>
+      </div>
+    </div>
+
+    <div class="test-info glass">
+      <div class="panel-label">YOUR EXAMINATION</div>
+      <div class="test-number">30</div>
+      <strong>MCQ Questions</strong>
+      <p>Three options per question. One correct answer.</p>
+    </div>
+  </aside>
+</div>
+
+<!-- TEST SCREEN -->
+<section id="testScreen" class="test-screen hidden">
+  <div class="test-container glass">
+    <div class="test-top">
+      <div>
+        <div class="eyebrow">EXAMLY ASSESSMENT</div>
+        <h1>Knowledge Check</h1>
+        <p id="testSubject">Maths examination</p>
+      </div>
+      <div class="test-clock">
+        <small>TIME REMAINING</small>
+        <strong id="testTimer">08:00</strong>
+      </div>
+    </div>
+
+    <div id="preparing" class="preparing hidden">
+      <div class="loader-ring"></div>
+      <h2>Preparing your examination...</h2>
+      <p>Creating questions based on your learning session.</p>
+      <div class="loading-line"></div>
+    </div>
+
+    <div id="testContent" class="hidden">
+      <div class="test-progress">
+        <span id="questionProgress">Question 1 of 30</span>
+        <span id="answeredCount">0 / 30 answered</span>
+      </div>
+      <div class="progress-track"><div id="questionBar"></div></div>
+
+      <div id="questionArea"></div>
+
+      <div class="question-controls">
+        <button id="previousQuestion" class="secondary-button">← Previous</button>
+        <button id="nextQuestion" class="secondary-button">Next →</button>
+      </div>
+
+      <div class="submit-area">
+        <p>Answer all 30 questions to submit your examination.</p>
+        <button id="submitTest" class="submit-button" disabled>
+          Complete all questions first
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="resultsScreen" class="results-screen hidden">
+  <div class="results-card glass">
+    <div class="result-icon">✦</div>
+    <div class="eyebrow">EXAMINATION COMPLETED</div>
+    <h1>Well done, <span id="resultName">Student</span>!</h1>
+    <p>Your learning progress matters. Keep improving!</p>
+
+    <div class="score-circle">
+      <div>
+        <strong id="scorePercent">0%</strong>
+        <small>YOUR SCORE</small>
+      </div>
+    </div>
+
+    <div class="result-stats">
+      <div><strong id="correctScore">0/30</strong><small>Correct answers</small></div>
+      <div><strong id="wrongScore">0</strong><small>Incorrect answers</small></div>
+      <div><strong id="averageScore">59/100</strong><small>Overall average</small></div>
+    </div>
+
+    <div class="result-message" id="resultMessage"></div>
+    <div id="reviewArea"></div>
+
+    <button class="main-button" id="finishButton">Back to Examly →</button>
+  </div>
+</section>
+
+<script src="chat.js"></script>
+</body>
+</html>
